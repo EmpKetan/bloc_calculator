@@ -29,6 +29,14 @@ def region():
     c=input("What is your region :- ")
     print()
     c.lower()
+def milcount():
+    global nation,troop,weapon,train,navy,plane
+    nation=input("Enter nation name :- ")
+    troop=int(input("Enter how many troops do you have :- "))
+    weapon=int(input("Enter how many weapons do you have :- "))
+    train=int(input("Enter how much training do you have :- "))
+    navy=int(input("Enter how many ships do you have :- "))
+    plane=int(input("Enter how many planes do you have :- "))
 #System Tab End
         
 #Milliatry Tab Start
@@ -106,12 +114,7 @@ def alliancewarscore():
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
     for i in range(2,a+2):
-        nation=input("Enter nation name :- ")
-        troop=int(input("Enter how many troops do you have :- "))
-        weapon=int(input("Enter how many weapons do you have :- "))
-        train=int(input("Enter how much training do you have :- "))
-        navy=int(input("Enter how many ships do you have :- "))
-        plane=int(input("Enter how many planes do you have :- "))
+        milcount()
         youscr=sqrt(troop)*sqrt(sqrt(weapon+1)*sqrt(train+1)*sqrt(plane+1))
         with open('war_you.csv',"a") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -124,12 +127,7 @@ def alliancewarscore():
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
     for o in range (2,b+2):
-        nation=input("Enter nation name :- ")
-        troop=int(input("Enter how many troops do you have :- "))
-        weapon=int(input("Enter how many weapons do you have :- "))
-        train=int(input("Enter how much training do you have :- "))
-        navy=int(input("Enter how many ships do you have :- "))
-        plane=int(input("Enter how many planes do you have :- "))
+        milcount()
         enemyscr=sqrt(troop)*sqrt(sqrt(weapon+1)*sqrt(train+1)*sqrt(plane+1))
         with open('war_enemy.csv','a') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
